@@ -24,7 +24,7 @@ class TaskType extends AbstractType
                 'class' => 'Rsh\Bundle\TodolistBundle\Entity\Status',
                 'empty_value' => 'Choose a Status',
             ))
-            ->add('endDate','date', array(
+            ->add('endDate', 'date', array(
                 'widget' => 'single_text',
                 'format' => 'dd-MM-yyyy',
                 'attr' => array('class' => 'date')

@@ -23,5 +23,4 @@ class LoadPriorityData implements FixtureInterface
     
         $manager->flush();
     }
-
-} 
+}

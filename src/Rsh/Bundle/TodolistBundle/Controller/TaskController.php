@@ -227,7 +227,6 @@ class TaskController extends Controller
             ->setAction($this->generateUrl('task_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

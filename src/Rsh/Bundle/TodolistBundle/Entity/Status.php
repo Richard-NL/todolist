@@ -66,6 +66,4 @@ class Status
     {
         return $this->description;
     }
-
-
 }

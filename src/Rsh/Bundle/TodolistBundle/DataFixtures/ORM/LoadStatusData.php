@@ -6,7 +6,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Acme\HelloBundle\Entity\User;
 use Rsh\Bundle\TodolistBundle\Entity\Status;
 
-class  LoadStatusData implements FixtureInterface
+class LoadStatusData implements FixtureInterface
 {
     /**
      * {@inheritDoc}
