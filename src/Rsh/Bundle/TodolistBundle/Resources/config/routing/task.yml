@@ -1,0 +1,27 @@
+task:
+    path:     /
+    defaults: { _controller: "RshTodolistBundle:Task:index" }
+
+
+task_new:
+    path:     /new
+    defaults: { _controller: "RshTodolistBundle:Task:new" }
+
+task_create:
+    path:     /create
+    defaults: { _controller: "RshTodolistBundle:Task:create" }
+    requirements: { _method: post }
+
+task_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "RshTodolistBundle:Task:edit" }
+
+task_update:
+    path:     /{id}/update
+    defaults: { _controller: "RshTodolistBundle:Task:update" }
+    requirements: { _method: post|put }
+
+task_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RshTodolistBundle:Task:delete" }
+    requirements: { _method: post|delete }

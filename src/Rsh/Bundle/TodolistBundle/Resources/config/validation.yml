@@ -1,0 +1,13 @@
+Rsh\Bundle\TodolistBundle\Entity\Task:
+    properties:
+        description:
+            - NotBlank: ~
+            - Length:
+                min: 3
+                max: 255
+        priority:
+            - NotBlank: ~
+        status:
+            - NotBlank: ~
+        endDate:
+            - Date: ~

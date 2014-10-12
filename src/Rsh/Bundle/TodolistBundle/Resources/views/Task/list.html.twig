@@ -1,0 +1,39 @@
+{% extends 'RshTodolistBundle::layout.html.twig' %}
+
+{% block content -%}
+    <div>
+        <a href="{{ path('task_new') }}" class="btn btn-primary">
+            Create a new Task
+        </a>
+    </div>
+    <br class="clearfix"/>
+    {% if pagination.getTotalItemCount > 0 %}
+    <table class="table table-striped">
+        <tr>
+            <th>Task description</th>
+            <th {% if pagination.isSorted('p.description') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Priority', 'p.description') }}</th>
+            <th {% if pagination.isSorted('s.description') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Status', 's.description') }}</th>
+            <th {% if pagination.isSorted('t.endDate') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'End date', 't.endDate') }}</th>
+            <th>Actions</th>
+        </tr>
+
+        {# table body #}
+        {% for task in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ task.description }}</td>
+                <td>{{ task.priority }}</td>
+                <td>{{ task.status }}</td>
+                <td>{% if task.endDate %}{{ task.endDate|date('M d Y') }}{% endif %}</td>
+                <td>
+                    <a href="{{ path('task_edit', { 'id': task.id }) }}" class="btn btn-primary btn-xs" role="button">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}

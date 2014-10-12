@@ -1,0 +1,4 @@
+services:
+#    rsh_todolist.example:
+#        class: Rsh\Bundle\TodolistBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

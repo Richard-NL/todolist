@@ -1,0 +1,34 @@
+{% extends 'RshTodolistBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Help</h1>
+
+    <p>This page describes how to manage your tasks for this web application</p>
+
+    <h2>Show tasks</h2>
+    <p>
+        To show all tasks click "Tasks" from the main menu. The tasks overview page will show if not shown already.
+        From here you can view the tasks that need to be done or have already been done.
+    </p>
+
+    <h2>Sorting the task list</h2>
+    <p>
+        To better determine what the importance of the shown tasks are, you can change the order of how they tasks are shown.
+        You can click the grid headers "Status", "Priority" and "End date" which will change the order of the tasks shown in the grid.
+    </p>
+
+    <h2>Create a new task</h2>
+    <p>
+        When there is a new task you wish to add to your list, go to the task overview page and click the button "Create new Task".
+        A form with appear. Fill out the form fields "Description", "Priority", "Status" and "End date". When done click the "Create" button to save the Task.
+        The Task will be saved and you will be redirected to the Task list overview page.
+    </p>
+
+    <h2>Edit a task</h2>
+    <p>
+        When you want to change an existing Task you can change it by click the "Edit" button to on the right in the task grid.
+        After you clicked the edit button a form will appear. Change the field(s) you wish and afterwards click the "Update" button at the bottom to save the task.
+        When the Task is saved you will be redirected to the task overview page.
+    </p>
+
+{% endblock %}

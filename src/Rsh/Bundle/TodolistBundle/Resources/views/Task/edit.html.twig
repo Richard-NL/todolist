@@ -1,0 +1,15 @@
+{% extends 'RshTodolistBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Task edit</h1>
+
+    <div>
+        <a href="{{ path('task') }}" class="btn btn-primary">
+            Back to the list
+        </a>
+        {{ form(delete_form,{'class' : '.btn'}) }}
+    </div>
+
+    {{ form(edit_form) }}
+
+{% endblock %}

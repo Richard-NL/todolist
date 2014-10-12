@@ -1,0 +1,11 @@
+rsh_todolist_task:
+    resource: "@RshTodolistBundle/Resources/config/routing/task.yml"
+    prefix:   /task
+
+rsh_todolist_help:
+    resource: "@RshTodolistBundle/Resources/config/routing/help.yml"
+    prefix:   /help
+
+rsh_todolist_homepage:
+    resource: "@RshTodolistBundle/Resources/config/routing/default.yml"
+    prefix:   /

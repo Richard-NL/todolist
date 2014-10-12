@@ -1,0 +1,4 @@
+rsh_todolist:
+    resource: "@RshTodolistBundle/Resources/config/routing.yml"
+    prefix:   /
+

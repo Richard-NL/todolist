@@ -1,0 +1,4 @@
+help:
+    path:     /
+    defaults: { _controller: "RshTodolistBundle:Help:index" }
+

@@ -1,0 +1,3 @@
+default:
+    path:     /
+    defaults: { _controller: "RshTodolistBundle:Default:index" }
