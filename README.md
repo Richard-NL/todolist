@@ -9,17 +9,21 @@ This is a todo webapp in which you can manage your todo tasks online
 
 ## Motivation
 Running a household either by yourself or with someone else can sometimes be a bit chaotic and there often is some communication overhead
-when for example calling your spouse to decide what groceries need to be picked up when coming back from work.
-Using a webapp you can simply put in tasks that need to be done and share the list.
+when for example calling your spouse to decide what groceries you need to be pick up when coming back from work.
+Using a webapp you can simply put in tasks that need to be done and share the list of what remains to be done.
 
 
 ## Installation
 Before you can run the app/console commands you will have to adjust the file "app/config/parameters.yml" to match your db settings.
 Afterwards you can run the commands below:
 
-- composer install
-- app/console doctrine:schema:create database
-- app/console fixtures:load
+- run "composer install"
+- make app/logs and app/cache writable
+- run command "app/console doctrine:database:create" for creating the database
+- run command "app/console doctrine:schema:create" for creating the tables in the database
+- run "app/console fixtures:load" for loading the status and priority entries required for a task
+OR:
+If you are running on a *nix machine run "install.sh" on the webserver
 
 ## Requirements
 - Apache/Nginx
