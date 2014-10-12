@@ -16,14 +16,14 @@ Using a webapp you can simply put in tasks that need to be done and share the li
 ## Installation
 Before you can run the app/console commands you will have to adjust the file "app/config/parameters.yml" to match your db settings.
 Afterwards you can run the commands below:
-
+- git clone git@github.com:Richard-NL/todolist.git
 - run "composer install"
 - make app/logs and app/cache writable
 - run command "app/console doctrine:database:create" for creating the database
 - run command "app/console doctrine:schema:create" for creating the tables in the database
 - run "app/console fixtures:load" for loading the status and priority entries required for a task
 OR:
-If you are running on a *nix machine run "install.sh" on the webserver
+If you are running on a *nix machine clone the repository  and then run "install.sh" on the webserver
 
 ## Requirements
 - Apache/Nginx
