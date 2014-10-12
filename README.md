@@ -19,7 +19,7 @@ To install this app do the following steps:
 ```bash
 git clone git@github.com:Richard-NL/todolist.git
 composer install
-chmod -R 777 app/logs and app/cache
+chmod -R 777 app/logs app/cache
 app/console doctrine:database:create
 app/console doctrine:schema:create
 app/console fixtures:load
