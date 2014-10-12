@@ -18,11 +18,11 @@ To install this app do the following steps:
 
 ```bash
 git clone git@github.com:Richard-NL/todolist.git
-run "composer install"
-make app/logs and app/cache writable
-run command "app/console doctrine:database:create" for creating the database
-run command "app/console doctrine:schema:create" for creating the tables in the database
-run "app/console fixtures:load" for loading the status and priority entries required for a task
+composer install
+chmod -R 777 app/logs and app/cache
+app/console doctrine:database:create
+app/console doctrine:schema:create
+app/console fixtures:load
 ```
 OR:
 If you are running on a *nix machine clone the repository  and then run "install.sh" on the webserver
