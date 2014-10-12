@@ -27,12 +27,10 @@ Afterwards you can run the commands below:
 - PHP
 
 ## Code elaboration
-### Template
-The Twig template engine is used for the layout of this app.
-
+### Templates
 #### App layout
-The layout for the whole app can be found  in "src/Rsh/Bundle/TodolistBundle/Resources/views/layout.html.twig"
-Basically it is a twitter bootstrap default template.
+For the layout I used the Twig template engine in combination with twitter bootstrap.
+The layout for the whole app can be found  in "src/Rsh/Bundle/TodolistBundle/Resources/views/layout.html.twig".
 
 #### Task CRUD templates
 The templates for managing tasks are as followed:
