@@ -13,14 +13,33 @@ class LoadPriorityData implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $Priorities[] = (new Priority())->setDescription('High');
-        $Priorities[] = (new Priority())->setDescription('Normal');
-        $Priorities[] = (new Priority())->setDescription('Low');
+        $metadata = $manager->getClassMetaData('Rsh\Bundle\TodolistBundle\Entity\Priority');
+        $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+
+        $priorities = array(
+            $this->createPriority(1, 'High'),
+            $this->createPriority(2, 'Normal'),
+            $this->createPriority(3, 'Low')
+        );
     
-        foreach ($Priorities as $Priority) {
-            $manager->persist($Priority);
+        foreach ($priorities as $priority) {
+            $manager->persist($priority);
         }
     
         $manager->flush();
+    }
+
+    /**
+     * @param $id
+     * @param $description
+     * @return Priority
+     */
+    private function createPriority($id, $description)
+    {
+        $priority = new Priority();
+        $priority->setId($id);
+        $priority->setDescription($description);
+        return $priority;
     }
 }

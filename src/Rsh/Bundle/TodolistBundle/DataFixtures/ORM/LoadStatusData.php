@@ -13,15 +13,34 @@ class LoadStatusData implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $statuses[] = (new Status())->setDescription('Not started');
-        $statuses[] = (new Status())->setDescription('In progress');
-        $statuses[] = (new Status())->setDescription('Verify');
-        $statuses[] = (new Status())->setDescription('Done');
+        $metadata = $manager->getClassMetaData('Rsh\Bundle\TodolistBundle\Entity\Status');
+        $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+
+        $statuses = array(
+            $this->createStatus(1, 'Not started'),
+            $this->createStatus(2, 'In progress'),
+            $this->createStatus(3, 'Verify'),
+            $this->createStatus(4, 'Done'),
+        );
 
         foreach ($statuses as $status) {
             $manager->persist($status);
         }
 
         $manager->flush();
+    }
+
+    /**
+     * @param $id
+     * @param $description
+     * @return Status
+     */
+    private function createStatus($id, $description)
+    {
+        $status = new Status();
+        $status->setId($id);
+        $status->setDescription($description);
+        return $status;
     }
 }

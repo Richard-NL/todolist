@@ -40,6 +40,14 @@ class Status
     }
 
     /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
      * Set description
      *
      * @param string $description
